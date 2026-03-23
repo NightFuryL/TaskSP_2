@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ConsoleTask/ConsoleTask.csproj" />
+  <Project Path="TaskLibrary/TaskLibrary.csproj" />
+</Solution>
