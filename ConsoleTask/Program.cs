@@ -16,13 +16,14 @@ public class Program
         Thread.Sleep(333);
         Imports.MessageBox(0, "C#", "Info", 0);
         Thread.Sleep(333);
-        //2
+        //2.1
         Imports.Beep(500, 300);
         Thread.Sleep(333);
         Imports.Beep(1000, 300);
         Thread.Sleep(333);
         Imports.Beep(1500, 300);
         Thread.Sleep(333);
+        //2.2
         Imports.MessageBeep(1);
         Thread.Sleep(333);
         Imports.MessageBeep(2);
