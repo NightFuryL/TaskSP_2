@@ -1,4 +1,4 @@
-namespace ParentWinFormsApp
+namespace WinFormsTask
 {
     internal static class Program
     {

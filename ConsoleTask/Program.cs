@@ -1,82 +1,61 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-using System.Threading;
-
-namespace TaskSP_2
+﻿using LibraryTask;
+namespace TaskSP_2;
+public class Program
 {
-    public class Counter
+    private static Semaphore semaphore = new Semaphore(3, 3);
+    private static void Main()
     {
-        public static int counter = 0;
-        public static object counterLock = new object();
-    }
+        //Exercise 1
+        Console.WriteLine("Exercise 1 with console interface");
+        BankAccount account = new BankAccount(1000);
 
-    public class Program
-    {
-        static Mutex mutex = new Mutex(false, "MyMutex");
-        //private static Mutex m = Mutex.OpenExisting("MyMutex");
-        private static Semaphore semaphore = new Semaphore(1, 1, "MySemaphore");
-        private static ManualResetEvent mre = new ManualResetEvent(false);
-        private static AutoResetEvent are = new AutoResetEvent(true);
-        static void Main(string[] args)
+        for (int i = 0; i < 5; i++)
         {
-            Thread[] threads = new Thread[5];
-
-            for (int i = 0; i < threads.Length; i++)
+            Thread t = new Thread(() =>
             {
-                threads[i] = new Thread(() =>
+                Random rnd = new Random();
+
+                for (int j = 0; j < 5; j++)
                 {
-                    for (int j = 0; j < 100_000; j++)
-                    {
+                    int money = rnd.Next(1, 200);
 
-                        are.WaitOne();
-                        Counter.counter++;
-                        are.Set();
-                        /*
-                        Console.WriteLine($"Thread {Thread.CurrentThread.ManagedThreadId} is waiting...");
-                        //semaphore.WaitOne();
-                        mre.WaitOne();
+                    if (rnd.Next(2) == 0)
+                        account.Deposit(money);
+                    else
+                        account.Withdraw(money);
 
-                        Console.WriteLine($"Thread {Thread.CurrentThread.ManagedThreadId} enters critical section");
-                        Thread.Sleep( 1000 );
+                    Thread.Sleep(200);
+                }
+            });
 
-                        Console.WriteLine($"Thread {Thread.CurrentThread.ManagedThreadId} exits critical section");
-                        //semaphore.Release();*/
-                        #region Methods to ensure thread safety
-                        /*
-                        // Способ 1: Использование Mutex
-                        mutex.WaitOne();
-                        Counter.counter++;
-                        mutex.ReleaseMutex();
-                        */
-                        /*
-                        // Способ 2: Использование оператора lock
-                        lock(Counter.counterLock)
-                        {
-                             Counter.counter++;
-                        }
-                        */
-                        /*
-                        // Способ 3: Использование Monitor
-                        Monitor.Enter(Counter.counterLock);
-                        Counter.counter++;
-                        Monitor.Exit(Counter.counterLock);
-                        */
-                        #endregion
-
-
-                    }
-                });
-                threads[i].Start();
-            }
-            //Console.WriteLine("Press any key to release the threads...");
-            //Console.ReadKey();
-            //mre.Set();
-            for (int i = 0; i < threads.Length; ++i)
-            {
-                threads[i].Join();
-            }
-
-            Console.WriteLine(Counter.counter);
+            t.Start();
         }
+        Console.ReadLine();
+        //Exercise 2
+        Console.WriteLine("Exercise 2 with console interface");
+        for (int i = 0; i < 10; i++)
+        {
+            Thread t = new Thread(DoSomething);
+            t.Start();
+        }
+
+        Console.ReadLine();
+    }
+    static void DoSomething()
+    {
+        semaphore.WaitOne();
+
+        Console.WriteLine($"Thread {Thread.CurrentThread.ManagedThreadId} started");
+
+        Random rnd = new Random();
+
+        for (int i = 0; i < 5; i++)
+        {
+            Console.WriteLine($"Thread {Thread.CurrentThread.ManagedThreadId}: {rnd.Next(1, 100)}");
+            Thread.Sleep(300);
+        }
+
+        Console.WriteLine($"Thread {Thread.CurrentThread.ManagedThreadId} finished");
+        semaphore.Release();
     }
 }
