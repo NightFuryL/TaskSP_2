@@ -1,5 +1,3 @@
 <Solution>
-  <Project Path="ChildCalcConsoleApp/ChildCalcConsoleApp.csproj" Id="5eba8099-9555-460d-ad87-f9ef18a2f644" />
-  <Project Path="ChildSearchConsoleApp/ChildSearchConsoleApp.csproj" Id="3de7f92c-2d2f-4e36-ae1d-87972a20a4ae" />
-  <Project Path="ParentWinFormsApp/ParentWinFormsApp.csproj" Id="86010a6a-fb98-401d-afa1-3463cfc8f6c6" />
+  <Project Path="ConsoleTask/ConsoleTask.csproj" Id="9ec4afbe-0017-4fa9-8466-660c872021f6" />
 </Solution>
