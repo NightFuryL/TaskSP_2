@@ -28,38 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtBoxLog = new TextBox();
-            btnStart = new Button();
+            label1 = new Label();
+            btnSearch = new Button();
+            txtResult = new TextBox();
+            txtSearch = new TextBox();
             SuspendLayout();
             // 
-            // txtBoxLog
+            // label1
             // 
-            txtBoxLog.Dock = DockStyle.Bottom;
-            txtBoxLog.Location = new Point(0, 40);
-            txtBoxLog.Multiline = true;
-            txtBoxLog.Name = "txtBoxLog";
-            txtBoxLog.ReadOnly = true;
-            txtBoxLog.ScrollBars = ScrollBars.Vertical;
-            txtBoxLog.Size = new Size(811, 437);
-            txtBoxLog.TabIndex = 0;
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 19);
+            label1.Name = "label1";
+            label1.Size = new Size(53, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Search";
             // 
-            // btnStart
+            // btnSearch
             // 
-            btnStart.Location = new Point(0, 0);
-            btnStart.Name = "btnStart";
-            btnStart.Size = new Size(811, 29);
-            btnStart.TabIndex = 1;
-            btnStart.Text = "Start";
-            btnStart.UseVisualStyleBackColor = true;
-            btnStart.Click += buttonStart_Click;
+            btnSearch.Location = new Point(12, 45);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(795, 29);
+            btnSearch.TabIndex = 1;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // txtResult
+            // 
+            txtResult.Location = new Point(12, 80);
+            txtResult.Multiline = true;
+            txtResult.Name = "txtResult";
+            txtResult.ReadOnly = true;
+            txtResult.ScrollBars = ScrollBars.Vertical;
+            txtResult.Size = new Size(795, 358);
+            txtResult.TabIndex = 2;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(71, 12);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(739, 27);
+            txtSearch.TabIndex = 3;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(811, 477);
-            Controls.Add(btnStart);
-            Controls.Add(txtBoxLog);
+            ClientSize = new Size(819, 450);
+            Controls.Add(txtSearch);
+            Controls.Add(txtResult);
+            Controls.Add(btnSearch);
+            Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -68,7 +87,9 @@
 
         #endregion
 
-        private TextBox txtBoxLog;
-        private Button btnStart;
+        private Label label1;
+        private Button btnSearch;
+        private TextBox txtResult;
+        private TextBox txtSearch;
     }
 }

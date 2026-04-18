@@ -1,10 +1,4 @@
 <Solution>
-  <Folder Name="/hw_05.04.2026_to_12.04.2026/">
-    <Project Path="ConsoleTaskHW/ConsoleTaskHW.csproj" Id="90fe5c29-95d3-4448-a948-6103491c622d" />
-  </Folder>
-  <Folder Name="/practice_05.04.2026/">
-    <Project Path="ConsoleTask/ConsoleTask.csproj" Id="9ec4afbe-0017-4fa9-8466-660c872021f6" />
-    <Project Path="LibraryTask/LibraryTask.csproj" Id="c09d52c2-a597-4c18-b95a-c1a1985c82b3" />
-    <Project Path="WinFormsTask/WinFormsTask.csproj" Id="65e83e70-0120-4d32-986f-f113ca9aa311" />
-  </Folder>
+  <Project Path="LibraryTask/LibraryTask.csproj" Id="cb97f549-d437-44c9-b893-699379dad974" />
+  <Project Path="WinFormsTask/WinFormsTask.csproj" Id="da4bb797-712b-4b8f-ac89-9e603b593aac" />
 </Solution>
