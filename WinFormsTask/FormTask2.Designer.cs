@@ -1,14 +1,14 @@
 ﻿namespace WinFormsTask
 {
-    partial class Form1
+    partial class FormTask2
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,35 +23,42 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
+            btnExecute = new Button();
             label1 = new Label();
-            btnSearch = new Button();
+            txtText = new TextBox();
             txtResult = new TextBox();
-            txtSearch = new TextBox();
             SuspendLayout();
+            // 
+            // btnExecute
+            // 
+            btnExecute.Location = new Point(12, 45);
+            btnExecute.Name = "btnExecute";
+            btnExecute.Size = new Size(776, 29);
+            btnExecute.TabIndex = 0;
+            btnExecute.Text = "Execute";
+            btnExecute.UseVisualStyleBackColor = true;
+            btnExecute.Click += btnExecute_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(12, 19);
             label1.Name = "label1";
-            label1.Size = new Size(53, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Search";
+            label1.Size = new Size(36, 20);
+            label1.TabIndex = 1;
+            label1.Text = "Text";
             // 
-            // btnSearch
+            // txtText
             // 
-            btnSearch.Location = new Point(12, 45);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(795, 29);
-            btnSearch.TabIndex = 1;
-            btnSearch.Text = "Search";
-            btnSearch.UseVisualStyleBackColor = true;
-            btnSearch.Click += btnSearch_Click;
+            txtText.Location = new Point(68, 12);
+            txtText.Name = "txtText";
+            txtText.Size = new Size(720, 27);
+            txtText.TabIndex = 2;
             // 
             // txtResult
             // 
@@ -60,36 +67,29 @@
             txtResult.Name = "txtResult";
             txtResult.ReadOnly = true;
             txtResult.ScrollBars = ScrollBars.Vertical;
-            txtResult.Size = new Size(795, 358);
-            txtResult.TabIndex = 2;
+            txtResult.Size = new Size(776, 358);
+            txtResult.TabIndex = 3;
             // 
-            // txtSearch
-            // 
-            txtSearch.Location = new Point(71, 12);
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(739, 27);
-            txtSearch.TabIndex = 3;
-            // 
-            // Form1
+            // FormTask2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(819, 450);
-            Controls.Add(txtSearch);
+            ClientSize = new Size(800, 450);
             Controls.Add(txtResult);
-            Controls.Add(btnSearch);
+            Controls.Add(txtText);
             Controls.Add(label1);
-            Name = "Form1";
-            Text = "Form1";
+            Controls.Add(btnExecute);
+            Name = "FormTask2";
+            Text = "FormTask2";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private Button btnExecute;
         private Label label1;
-        private Button btnSearch;
+        private TextBox txtText;
         private TextBox txtResult;
-        private TextBox txtSearch;
     }
 }
